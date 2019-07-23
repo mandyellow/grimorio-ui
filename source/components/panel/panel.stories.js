@@ -7,7 +7,7 @@ import Panel from './panel-component';
 import Button from '../button';
 import Product from '../product';
 
-const pannelSize = { flexBasis: '20%', minWidth: '250px', };
+const pannelSize = { flexBasis: '20%', minWidth: '250px' };
 
 const exampleProduct = {
   img: 'https://images-americanas.b2w.io/produtos/01/00/sku/33446/6/33446652_4GG.jpg',
@@ -21,7 +21,7 @@ const exampleProduct = {
     {
       type: 'highlight',
       value: true,
-    }
+    },
   ],
 };
 
@@ -29,7 +29,7 @@ const stories = storiesOf('Panel', module);
 
 stories.addDecorator(withKnobs);
 
-stories.addWithInfo('Default', () => (
+stories.add('Default', () => (
   <div style={{ width: '25%' }}>
     <Panel>
       Simple Panel
@@ -39,10 +39,14 @@ stories.addWithInfo('Default', () => (
       <p>Content</p>
       <Button>Send</Button>
     </Panel>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <Panel central>
+      <p>Valor</p>
+    </Panel>
   </div>
 ));
 
-stories.addWithInfo('With Footer', () => (
+stories.add('With Footer', () => (
   <div style={{ width: '25%' }}>
     <Panel title="Title" footer={<Button size="large">Cadastrar Site</Button>}>
       <p>Content</p>
@@ -50,7 +54,7 @@ stories.addWithInfo('With Footer', () => (
   </div>
 ));
 
-stories.addWithInfo('Loading', () => (
+stories.add('Loading', () => (
   <div style={{ width: '25%' }}>
     <Panel title="Title" loading={true} footer={<Button size="large">Cadastrar Site</Button>}>
       <p>Content</p>
@@ -58,7 +62,7 @@ stories.addWithInfo('Loading', () => (
   </div>
 ));
 
-stories.addWithInfo('Accordion', () => (
+stories.add('Accordion', () => (
   <div style={{ width: '25%' }}>
     <Panel
       title="Title"
@@ -71,22 +75,22 @@ stories.addWithInfo('Accordion', () => (
   </div>
 ));
 
-stories.addWithInfo('With Brand', () => (
+stories.add('With Brand', () => (
   <div style={{ display: 'flex' }}>
     <Panel brand="suba" style={pannelSize}>
-      <Product type="card" data={exampleProduct}></Product>
+      <Product type="card" data={exampleProduct} />
     </Panel>
     &nbsp;&nbsp;&nbsp;&nbsp;
     <Panel brand="acom" style={pannelSize}>
-      <Product type="card" data={exampleProduct}></Product>
+      <Product type="card" data={exampleProduct} />
     </Panel>
     &nbsp;&nbsp;&nbsp;&nbsp;
     <Panel brand="shop" style={pannelSize}>
-      <Product type="card" data={exampleProduct}></Product>
+      <Product type="card" data={exampleProduct} />
     </Panel>
     &nbsp;&nbsp;&nbsp;&nbsp;
     <Panel brand="soub" style={pannelSize}>
-      <Product type="card" data={exampleProduct}></Product>
+      <Product type="card" data={exampleProduct} />
     </Panel>
   </div>
 ));

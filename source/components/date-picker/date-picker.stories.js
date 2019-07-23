@@ -13,41 +13,31 @@ const printDates = (startDate, endDate) => {
   console.log('dates:', moment(startDate).format(), moment(endDate).format());
 };
 
-stories.addWithInfo('Range date', () => {
+stories.add('Range date', () => {
   return (
     <div>
-      <DatePicker
-        onChange={({ startDate, endDate }) => printDates(startDate, endDate)}
-      />
+      <DatePicker onChange={({ startDate, endDate }) => printDates(startDate, endDate)} />
     </div>
   );
 });
 
-stories.addWithInfo('Single Date', () => {
+stories.add('Single Date', () => {
   return (
     <div>
-      <DatePicker
-        isSingleDate
-        monthsToShow={1}
-        onChange={(dates) => console.log('single date:', dates)}
-      />
+      <DatePicker isSingleDate monthsToShow={1} onChange={dates => console.log('single date:', dates)} />
     </div>
   );
 });
 
-stories.addWithInfo('Mobile', () => {
+stories.add('Mobile', () => {
   return (
     <div>
-      <DatePicker
-        isMobile
-        onChange={({ startDate, endDate }) => printDates(startDate, endDate)}
-      />
+      <DatePicker isMobile onChange={({ startDate, endDate }) => printDates(startDate, endDate)} />
     </div>
   );
 });
 
-
-stories.addWithInfo('Default Values', () => {
+stories.add('Default Values', () => {
   return (
     <div>
       <DatePicker
@@ -56,21 +46,21 @@ stories.addWithInfo('Default Values', () => {
         onChange={({ startDate, endDate }) => printDates(startDate, endDate)}
       />
 
-      <br/>
-      <br/>
+      <br />
+      <br />
 
       <DatePicker
         defaultSingleDate={moment().subtract(7, 'days')}
         isSingleDate
         monthsToShow={1}
         initialMonth={moment()}
-        onChange={(dates) => console.log('single date:', dates)}
+        onChange={dates => console.log('single date:', dates)}
       />
     </div>
   );
 });
 
-stories.addWithInfo('Align', () => {
+stories.add('Align', () => {
   return (
     <div>
       <DatePicker
@@ -79,8 +69,8 @@ stories.addWithInfo('Align', () => {
         onChange={({ startDate, endDate }) => printDates(startDate, endDate)}
       />
 
-      <br/>
-      <br/>
+      <br />
+      <br />
 
       <DatePicker
         align="right"

@@ -129,17 +129,21 @@ class Panel extends PureComponent {
       footerClassName,
       loading,
       accordion,
+      central,
+      isCentral,
       ...rest
     } = this.props;
 
     const fullClassName = cx(className, {
       [styles.default]: true,
+      [styles.isCentral]: isCentral,
     });
 
     const wrapperClass = cx(styles.wrapper, {
       [styles[size]]: size,
       [styles.isBrand]: brand,
       [styles.noPadding]: noPadding,
+      [styles.centralize]: central,
     });
 
     const contentClass = cx(styles.content, contentClassName, {

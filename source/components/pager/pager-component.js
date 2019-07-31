@@ -147,7 +147,7 @@ class Pager extends PureComponent {
 
     return (
       <div className={pagerWrap}>
-        {perpage && this.renderPerPage(limit, onLimitChange, limitList, isMobile)}
+        {perpage && limitList && this.renderPerPage(limit, onLimitChange, limitList, isMobile)}
 
         <div className={cx(styles.showing, { [styles.isMobile]: isMobile })}>
           {offset} - {offset + length} de {count}
